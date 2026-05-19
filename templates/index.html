@@ -1,3 +1,27 @@
+{% load static %}
 <html>
-  <h1>This is My Django Web Site</h1>
+  <head>
+    <title>Etouphane</title>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://bootswatch.com/5/morph/bootstrap.min.css" />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <br />
+    <br />
+
+    <div class="text-center">
+      <h2>Simply.... The best website out there!</h2>
+
+      <br />
+    </div>
+  </body>
+  <script src="{% static 'js/app.js' %}"></script>
 </html>
