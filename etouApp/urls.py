@@ -7,4 +7,3 @@ urlpatterns = [
     path('', views.homepage, name=''),
 
 ]
-
