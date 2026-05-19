@@ -1,0 +1,40 @@
+{% load static %}
+
+<html>
+  <head>
+    <title>Simply | Register</title>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://bootswatch.com/5/morph/bootstrap.min.css" />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/style.css' %}" />
+  </head>
+
+  <div class="container bg-white shadow-md p-5" style="width: 500px">
+    <h2>Register</h2>
+
+    <br />
+
+    <form method="POST" autocomplete="off">
+      {% csrf_token %}
+
+      <br />
+
+      {{form.as_p}}
+
+      <input class="btn btn-primary" type="submit" value="Submit" />
+
+      <br />
+      <br />
+
+      <p>Already have an account? <a href="{% url 'my-login' %}"> Login </a></p>
+    </form>
+  </div>
+
+  <br />
+</html>
