@@ -71,6 +71,9 @@ def dashboard(request):
     pass
 
 
+
 def user_logout(request):
 
-    pass
+    auth.logout(request)
+
+    return redirect('')
