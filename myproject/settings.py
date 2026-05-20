@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'etouApp',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -119,3 +120,29 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [BASE_DIR/"static"]
+
+# Amazon S3 configuration 
+
+
+AWS_ACCESS_KEY_ID = "AKIA6PXYLK7QL4ZVKCGH" # - Enter your AWS Access Key ID HERE
+AWS_SECRET_ACCESS_KEY = "t9Nidjn2Y3797EM7Uyya69mhKScWS8eiqmNeXzGi" # - Enter your AWS Secret Access Key ID HERE
+
+AWS_STORAGE_BUCKET_NAME = 'django-basic-application123' # - Enter your S3 bucket name HERE
+
+# Django 4.2 >
+STORAGES = {"staticfiles": {"BACKEND": "storages.backends.s3boto3.S3StaticStorage"}}
+
+# Django < 4.2 
+'''
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+'''
+
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+
+#AWS_S3_FILE_OVERWRITE = False
+
+
+# Admin styling adjustment
+
+#ADMIN_MEDIA_PREFIX = '/static/admin/'

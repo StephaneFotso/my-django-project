@@ -63,12 +63,11 @@ def my_login(request):
     return render(request, 'my-login.html', context=context)
 
 
- 
-
+@login_required(login_url='my-login')
 
 def dashboard(request):
 
-    pass
+    return render(request, 'dashboard.html')
 
 
 
